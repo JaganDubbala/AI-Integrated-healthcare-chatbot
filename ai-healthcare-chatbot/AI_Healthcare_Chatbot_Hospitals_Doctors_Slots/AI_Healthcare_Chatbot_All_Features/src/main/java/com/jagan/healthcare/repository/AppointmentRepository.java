@@ -1,0 +1,3 @@
+package com.jagan.healthcare.repository;
+import com.jagan.healthcare.model.Appointment; import org.springframework.data.jpa.repository.JpaRepository; import java.time.*; import java.util.*;
+public interface AppointmentRepository extends JpaRepository<Appointment,Long>{ boolean existsByDoctorNameAndAppointmentDateAndAppointmentTimeAndStatus(String doctorName,LocalDate appointmentDate,LocalTime appointmentTime,String status); List<Appointment> findAllByOrderByAppointmentDateAscAppointmentTimeAsc(); List<Appointment> findByPatientEmailIgnoreCaseOrderByAppointmentDateAscAppointmentTimeAsc(String email); }

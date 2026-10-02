@@ -1,0 +1,40 @@
+package com.jagan.healthcare.dto;
+
+public class ChatResponse {
+
+    private String response;
+    private String intent;
+    private boolean severityRequired;
+    private String symptom;
+
+    public ChatResponse(String response, String intent) {
+        this.response = response;
+        this.intent = intent;
+        this.severityRequired = false;
+        this.symptom = null;
+    }
+
+    public ChatResponse(String response, String intent,
+                        boolean severityRequired, String symptom) {
+        this.response = response;
+        this.intent = intent;
+        this.severityRequired = severityRequired;
+        this.symptom = symptom;
+    }
+
+    public String getResponse() {
+        return response;
+    }
+
+    public String getIntent() {
+        return intent;
+    }
+
+    public boolean isSeverityRequired() {
+        return severityRequired;
+    }
+
+    public String getSymptom() {
+        return symptom;
+    }
+}

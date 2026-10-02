@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MediCare - Dashboard</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div id="navbar-mount"></div>
+
+<div class="page">
+  <div class="container">
+    <div class="hero">
+      <div>
+        <h1 id="welcome-heading">Welcome back!</h1>
+        <p>Find the medicines you need, track your orders, and manage your health with ease.</p>
+        <div class="hero-actions">
+          <a href="/customer/catalog.html" class="btn btn-light">Browse Medicines</a>
+          <a href="/customer/my-orders.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">My Orders</a>
+        </div>
+      </div>
+      <div class="hero-icon">&#128137;</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-orders">0</div>
+        <div class="stat-label">Total Orders</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-pending">0</div>
+        <div class="stat-label">Orders in Progress</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-cart">0</div>
+        <div class="stat-label">Items in Cart</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Recent Orders</h2>
+    <div class="card">
+      <div id="recent-orders"></div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/dashboard.js"></script>
+</body>
+</html>

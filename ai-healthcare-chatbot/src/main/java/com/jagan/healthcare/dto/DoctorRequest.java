@@ -1,0 +1,3 @@
+package com.jagan.healthcare.dto;
+import jakarta.validation.constraints.*;
+public class DoctorRequest { @NotBlank @Size(max=100) private String name; @NotBlank @Size(max=100) private String specialty; @NotBlank @Size(max=100) private String hospitalName; @Size(max=30) private String consultationFee; public DoctorRequest(){} public String getName(){return name;} public String getSpecialty(){return specialty;} public String getHospitalName(){return hospitalName;} public String getConsultationFee(){return consultationFee;} public void setName(String v){name=v;} public void setSpecialty(String v){specialty=v;} public void setHospitalName(String v){hospitalName=v;} public void setConsultationFee(String v){consultationFee=v;} }

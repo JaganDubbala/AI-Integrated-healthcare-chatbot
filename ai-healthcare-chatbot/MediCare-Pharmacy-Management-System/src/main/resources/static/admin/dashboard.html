@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MediCare Admin - Dashboard</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div id="navbar-mount"></div>
+
+<div class="admin-layout">
+  <div id="sidebar-mount"></div>
+  <main class="admin-content">
+    <h1 class="section-title">Admin Dashboard</h1>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value" id="stat-medicines">0</div>
+        <div class="stat-label">Total Medicines</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-customers">0</div>
+        <div class="stat-label">Registered Customers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-orders">0</div>
+        <div class="stat-label">Total Orders</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value" id="stat-low-stock">0</div>
+        <div class="stat-label">Low Stock / Expired</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">Recent Orders</h2>
+    <div class="card">
+      <div id="recent-orders"></div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/admin-sidebar.js"></script>
+<script src="/js/admin-dashboard.js"></script>
+</body>
+</html>

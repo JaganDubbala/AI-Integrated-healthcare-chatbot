@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MediCare Admin - Manage Medicines</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div id="navbar-mount"></div>
+
+<div class="admin-layout">
+  <div id="sidebar-mount"></div>
+  <main class="admin-content">
+    <div class="flex-between mb-16">
+      <h1 class="section-title" style="margin:0;">Manage Medicines</h1>
+      <a href="/admin/add-medicine.html" class="btn btn-primary">+ Add Medicine</a>
+    </div>
+
+    <div class="search-bar">
+      <input type="text" id="search-name" class="form-control" placeholder="Search by medicine name..." />
+      <input type="text" id="search-category" class="form-control" placeholder="Filter by category..." />
+      <button class="btn btn-primary" id="search-btn">Search</button>
+      <button class="btn btn-outline" id="clear-btn">Clear</button>
+    </div>
+
+    <div class="card">
+      <div id="medicines-table"></div>
+    </div>
+  </main>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/admin-sidebar.js"></script>
+<script src="/js/admin-medicines.js"></script>
+</body>
+</html>

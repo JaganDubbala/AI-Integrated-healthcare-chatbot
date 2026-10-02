@@ -1,0 +1,3 @@
+package com.jagan.healthcare.config;
+import com.jagan.healthcare.model.UserAccount; import com.jagan.healthcare.repository.UserAccountRepository; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.Bean; import org.springframework.context.annotation.Configuration; import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+@Configuration public class UserDataInitializer { @Bean CommandLineRunner seedUsers(UserAccountRepository repo){return args->{if(!repo.existsByEmailIgnoreCase("admin@healthcare.com")){repo.save(new UserAccount("System Admin","admin@healthcare.com",new BCryptPasswordEncoder().encode("Admin@123"),"","ADMIN"));}};} }

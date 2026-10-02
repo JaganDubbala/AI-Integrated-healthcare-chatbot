@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MediCare - My Cart</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div id="navbar-mount"></div>
+
+<div class="page">
+  <div class="container">
+    <h1 class="section-title">My Cart</h1>
+    <div class="cart-layout">
+      <div class="card" id="cart-items"></div>
+      <div class="card">
+        <h3 class="section-title">Order Summary</h3>
+        <div class="cart-summary"><span>Items</span><span id="summary-count">0</span></div>
+        <div class="cart-summary total"><span>Total</span><span id="summary-total">&#8377;0.00</span></div>
+        <button class="btn btn-primary btn-block mt-16" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/cart.js"></script>
+</body>
+</html>

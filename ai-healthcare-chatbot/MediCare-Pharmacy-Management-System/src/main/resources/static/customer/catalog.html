@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MediCare - Medicine Catalog</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<div id="navbar-mount"></div>
+
+<div class="page">
+  <div class="container">
+    <h1 class="section-title">Medicine Catalog</h1>
+
+    <div class="search-bar">
+      <input type="text" id="search-name" class="form-control" placeholder="Search by medicine name..." />
+      <input type="text" id="search-category" class="form-control" placeholder="Filter by category..." />
+      <button class="btn btn-primary" id="search-btn">Search</button>
+      <button class="btn btn-outline" id="clear-btn">Clear</button>
+    </div>
+
+    <div id="medicine-list" class="medicine-grid"></div>
+  </div>
+</div>
+
+<script src="/js/api.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/navbar.js"></script>
+<script src="/js/catalog.js"></script>
+</body>
+</html>

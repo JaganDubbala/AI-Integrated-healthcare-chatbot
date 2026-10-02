@@ -1,0 +1,3 @@
+package com.jagan.healthcare.dto;
+import jakarta.validation.constraints.*;
+public class AuthRequest { @NotBlank @Size(max=100) private String name; @NotBlank @Email @Size(max=150) private String email; @NotBlank @Size(min=6,max=100) private String password; @Size(max=20) private String phone; public AuthRequest(){} public String getName(){return name;} public String getEmail(){return email;} public String getPassword(){return password;} public String getPhone(){return phone;} public void setName(String v){name=v;} public void setEmail(String v){email=v;} public void setPassword(String v){password=v;} public void setPhone(String v){phone=v;} }

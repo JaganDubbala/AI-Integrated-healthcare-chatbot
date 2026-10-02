@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Healthcare Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h1>AI Healthcare Assistant</h1>
+            <p>General health FAQs and preliminary symptom guidance</p>
+        </div>
+        <span class="status">● Online</span>
+    </header>
+
+    <div class="warning">
+        <strong>Important:</strong> This chatbot provides general information only.
+        It does not diagnose medical conditions or replace a healthcare professional.
+        For emergencies, contact your local emergency service.
+    </div>
+
+    <main id="chatBox" class="chat-box">
+        <div class="message bot">
+            <div class="bubble">
+                Hello! Ask me a general health question or tell me about a common symptom.
+                You can also use the microphone.
+            </div>
+        </div>
+    </main>
+
+    <div class="controls">
+        <button id="micButton" class="icon-btn" title="Start voice input">🎤</button>
+        <input id="messageInput" type="text" maxlength="500"
+               placeholder="Type your health question..." autocomplete="off">
+        <button id="sendButton">Send</button>
+    </div>
+
+    <div id="voiceStatus" class="voice-status"></div>
+<section id="hospitalPanel" class="hospital-panel">
+  <h2>🏥 Hospital List</h2>
+  <div class="hospital-filters">
+    <input id="hospitalCity" placeholder="City, e.g. Hyderabad">
+    <input id="hospitalArea" placeholder="Area (optional), e.g. Madhapur">
+    <button id="findHospitals">Find Hospitals</button>
+  </div>
+  <div id="hospitalList">Loading hospital directory...</div>
+</section>
+
+<section id="doctorPanel" class="doctor-panel">
+  <h2>👨‍⚕️ Doctors</h2>
+  <div id="doctorList">Loading doctors...</div>
+</section>
+
+<section id="appointmentPanel" class="appointment-panel hidden">
+  <h2>Book an Appointment</h2>
+  <form id="appointmentForm">
+    <input id="patientName" maxlength="100" placeholder="Patient name" required>
+    <select id="doctorName" required>
+      <option value="">Select doctor</option>
+    </select>
+    <input id="appointmentDate" type="date" required>
+    <select id="appointmentTime" required disabled>
+      <option value="">Select date first</option>
+    </select>
+    <textarea id="reason" maxlength="500" placeholder="Reason for visit (optional)"></textarea>
+    <button type="submit">Confirm Appointment</button>
+    <button type="button" id="cancelAppointment" class="secondary">Cancel</button>
+  </form>
+  <div id="appointmentResult"></div>
+</section>
+
+    <footer>
+        <button id="clearButton">Clear chat</button>
+        <button id="stopSpeechButton">Stop speaking</button>
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

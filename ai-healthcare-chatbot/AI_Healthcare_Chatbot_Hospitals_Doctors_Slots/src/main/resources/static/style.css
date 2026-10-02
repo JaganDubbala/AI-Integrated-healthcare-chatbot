@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef3f8;
+    color: #1f2937;
+}
+
+.container {
+    width: min(900px, 95%);
+    margin: 30px auto;
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0,0,0,.10);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    background: #0f766e;
+    color: white;
+}
+
+header h1 {
+    margin: 0 0 5px;
+}
+
+header p {
+    margin: 0;
+    opacity: .9;
+}
+
+.status {
+    white-space: nowrap;
+}
+
+.warning {
+    margin: 16px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.chat-box {
+    height: 480px;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f8fafc;
+}
+
+.message {
+    display: flex;
+    margin: 10px 0;
+}
+
+.message.user {
+    justify-content: flex-end;
+}
+
+.bubble {
+    max-width: 75%;
+    padding: 12px 15px;
+    border-radius: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+}
+
+.bot .bubble {
+    background: #e2e8f0;
+}
+
+.user .bubble {
+    background: #0f766e;
+    color: white;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    padding: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+input {
+    flex: 1;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 13px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #0f766e;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    cursor: pointer;
+    background: #0f766e;
+    color: white;
+    font-size: 15px;
+}
+
+button:hover {
+    opacity: .9;
+}
+
+.icon-btn {
+    font-size: 20px;
+    padding: 8px 14px;
+}
+
+.voice-status {
+    min-height: 24px;
+    padding: 0 16px 10px;
+    font-size: 14px;
+}
+
+footer {
+    display: flex;
+    gap: 10px;
+    padding: 0 16px 18px;
+}
+
+footer button {
+    background: #475569;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .chat-box {
+        height: 60vh;
+    }
+
+    .bubble {
+        max-width: 88%;
+    }
+
+    header {
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+.appointment-panel { margin:10px 16px 18px; padding:18px; border:1px solid #cbd5e1; border-radius:12px; background:#f8fafc; }
+.appointment-panel h2 { margin-top:0; }
+.appointment-panel form { display:grid; gap:10px; }
+.appointment-panel input,.appointment-panel select,.appointment-panel textarea { width:100%; padding:12px; border:1px solid #cbd5e1; border-radius:10px; font-size:15px; }
+.appointment-panel textarea { min-height:80px; resize:vertical; }
+.appointment-panel .secondary { background:#64748b; }
+.appointment-panel.hidden { display:none; }
+#appointmentResult { margin-top:12px; font-weight:bold; }
+
+.hospital-panel { margin:10px 16px 18px; padding:18px; border:1px solid #cbd5e1; border-radius:12px; background:#f8fafc; }
+.hospital-panel h2 { margin-top:0; }
+.hospital-filters { display:grid; grid-template-columns:1fr 1fr auto; gap:10px; margin-bottom:12px; }
+.hospital-card { background:white; border:1px solid #e2e8f0; border-radius:10px; padding:12px; margin:8px 0; }
+.hospital-card h3 { margin:0 0 6px; }
+.hospital-card p { margin:5px 0; line-height:1.4; }
+@media (max-width:600px) {
+  .hospital-filters { grid-template-columns:1fr; }
+}
+
+.doctor-panel { margin:10px 16px 18px; padding:18px; border:1px solid #cbd5e1; border-radius:12px; background:#f8fafc; }
+.doctor-card { background:white; border:1px solid #e2e8f0; border-radius:10px; padding:12px; margin:8px 0; }
+.doctor-card h3 { margin:0 0 6px; }
+.doctor-card p { margin:5px 0; }

@@ -1,0 +1,9 @@
+package com.jagan.healthcare.controller;
+import com.jagan.healthcare.dto.AuthRequest; import com.jagan.healthcare.model.UserAccount; import com.jagan.healthcare.service.AuthService; import jakarta.servlet.http.HttpSession; import jakarta.validation.Valid; import org.springframework.http.ResponseEntity; import org.springframework.web.bind.annotation.*; import java.util.Map;
+@RestController @RequestMapping("/api/auth") @CrossOrigin(origins="*") public class AuthController { private final AuthService service; public AuthController(AuthService service){this.service=service;}
+ @PostMapping("/register") public ResponseEntity<?> register(@Valid @RequestBody AuthRequest r,HttpSession s){UserAccount u=service.register(r);s.setAttribute("userEmail",u.getEmail());s.setAttribute("role",u.getRole());return ResponseEntity.ok(Map.of("message","Registration successful.","user",safe(u)));}
+ @PostMapping("/login") public ResponseEntity<?> login(@RequestParam String email,@RequestParam String password,HttpSession s){UserAccount u=service.login(email,password);s.setAttribute("userEmail",u.getEmail());s.setAttribute("role",u.getRole());return ResponseEntity.ok(Map.of("message","Login successful.","user",safe(u)));}
+ @PostMapping("/logout") public Map<String,String> logout(HttpSession s){s.invalidate();return Map.of("message","Logged out successfully.");}
+ @GetMapping("/me") public ResponseEntity<?> me(HttpSession s){Object email=s.getAttribute("userEmail");if(email==null)return ResponseEntity.status(401).body(Map.of("message","Not logged in."));return ResponseEntity.ok(Map.of("email",email,"role",s.getAttribute("role")));}
+ private Map<String,Object> safe(UserAccount u){return Map.of("id",u.getId(),"name",u.getName(),"email",u.getEmail(),"phone",u.getPhone()==null?"":u.getPhone(),"role",u.getRole());}
+}
